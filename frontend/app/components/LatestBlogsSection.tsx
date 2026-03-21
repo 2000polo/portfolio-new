@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 /** Local type until Sanity TypeGen includes `latestBlogsSection` on `Page.pageBuilder`. */
 type LatestBlogsSectionBlock = {
   _type: 'latestBlogsSection'
@@ -27,7 +29,14 @@ export default function LatestBlogsSection({block}: LatestBlogsSectionProps) {
             <div className="blogs-wrapper mt-6 flex gap-2 md:gap-4 overflow-x-auto -mx-[0.5rem] sm:mx-0 px-[0.5rem] sm:px-0">
                 <div className="blog-card-wrapper max-w-[400px] min-w-full sm:min-w-[400px] p-3 bg-white border border-gray-300 rounded-3xl">
                     <div className="relative overflow-hidden rounded-2xl">
-                        <img className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px]! w-full object-cover" src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg" alt=""/>
+                        <Image
+                          className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px] w-full object-cover"
+                          src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg"
+                          alt=""
+                          width={236}
+                          height={236}
+                          sizes="(max-width: 640px) 100vw, 400px"
+                        />
                         <div className="category-chips absolute bottom-2 left-2 flex gap-2">
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">UI/UX</div>
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">Development</div>
@@ -46,7 +55,14 @@ export default function LatestBlogsSection({block}: LatestBlogsSectionProps) {
 
                 <div className="blog-card-wrapper max-w-[400px] min-w-full sm:min-w-[400px] p-3 bg-white border border-gray-300 rounded-3xl">
                     <div className="relative overflow-hidden rounded-2xl">
-                        <img className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px]! w-full object-cover" src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg" alt=""/>
+                        <Image
+                          className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px] w-full object-cover"
+                          src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg"
+                          alt=""
+                          width={236}
+                          height={236}
+                          sizes="(max-width: 640px) 100vw, 400px"
+                        />
                         <div className="category-chips absolute bottom-2 left-2 flex gap-2">
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">UI/UX</div>
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">Development</div>
@@ -65,7 +81,14 @@ export default function LatestBlogsSection({block}: LatestBlogsSectionProps) {
 
                 <div className="blog-card-wrapper max-w-[400px] min-w-full sm:min-w-[400px] p-3 bg-white border border-gray-300 rounded-3xl">
                     <div className="relative overflow-hidden rounded-2xl">
-                        <img className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px]! w-full object-cover" src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg" alt=""/>
+                        <Image
+                          className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px] w-full object-cover"
+                          src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg"
+                          alt=""
+                          width={236}
+                          height={236}
+                          sizes="(max-width: 640px) 100vw, 400px"
+                        />
                         <div className="category-chips absolute bottom-2 left-2 flex gap-2">
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">UI/UX</div>
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">Development</div>
@@ -84,7 +107,14 @@ export default function LatestBlogsSection({block}: LatestBlogsSectionProps) {
 
                 <div className="blog-card-wrapper max-w-[400px] min-w-full sm:min-w-[400px] p-3 bg-white border border-gray-300 rounded-3xl">
                     <div className="relative overflow-hidden rounded-2xl">
-                        <img className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px]! w-full object-cover" src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg" alt=""/>
+                        <Image
+                          className="rounded-2xl hover:scale-105 transition-all delay-150 ease-linear overflow-hidden h-[250px] w-full object-cover"
+                          src="https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg"
+                          alt=""
+                          width={236}
+                          height={236}
+                          sizes="(max-width: 640px) 100vw, 400px"
+                        />
                         <div className="category-chips absolute bottom-2 left-2 flex gap-2">
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">UI/UX</div>
                             <div className="alan-sans-400 text-gray-900 text-sm bg-white rounded-lg h-6 flex items-center justify-center px-2">Development</div>
