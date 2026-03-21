@@ -12,7 +12,7 @@ function assertValue<T>(v: T | undefined, errorMessage: string): T {
 }
 
 export const dataset = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_DATASET,
+  process.env.SANITY_STUDIO_DATASET,
   'Missing environment variable: NEXT_PUBLIC_SANITY_DATASET',
 )
 
