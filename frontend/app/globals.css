@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+
 @plugin "@tailwindcss/typography";
 
 @utility container {
@@ -32,4 +33,14 @@
   --font-sans: 'Inter', 'sans-serif';
 
   --default-transition-duration: 250ms;
+}
+
+@import './styles/base/typography.css';
+@import './styles/variables/colors.css';
+@import './styles/variables/spaces.css';
+@import './styles/components/button.css';
+
+img{
+  width: 100%;
+  height: auto;
 }

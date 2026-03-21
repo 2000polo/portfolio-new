@@ -1,5 +1,12 @@
 import './globals.css'
 
+import '@fontsource/alan-sans/300.css'
+import '@fontsource/alan-sans/400.css'
+import '@fontsource/alan-sans/500.css'
+import '@fontsource/alan-sans/600.css'
+import '@fontsource/alan-sans/700.css'
+import '@fontsource/alan-sans/800.css'
+
 import {SpeedInsights} from '@vercel/speed-insights/next'
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
@@ -8,8 +15,8 @@ import {VisualEditing, toPlainText} from 'next-sanity'
 import {Toaster} from 'sonner'
 
 import DraftModeToast from '@/app/components/DraftModeToast'
-import Footer from '@/app/components/Footer'
-import Header from '@/app/components/Header'
+import Footer from '@/app/components/layout/Footer'  
+import Header from '@/app/components/layout/Header'
 import * as demo from '@/sanity/lib/demo'
 import {sanityFetch, SanityLive} from '@/sanity/lib/live'
 import {settingsQuery} from '@/sanity/lib/queries'
@@ -63,7 +70,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
   return (
     <html lang="en" className={`${inter.variable} bg-white text-black`}>
       <body>
-        <section className="min-h-screen pt-24">
+        <section className="min-h-screen">
           {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
           <Toaster />
           {isDraftMode && (

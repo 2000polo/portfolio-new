@@ -12,6 +12,7 @@
     "typegen": "sanity typegen generate"
   },
   "dependencies": {
+    "@fontsource/alan-sans": "^5.2.2",
     "@sanity/client": "^7.13.1",
     "@sanity/image-url": "^1.2.0",
     "@sanity/uuid": "^3.0.2",
@@ -20,6 +21,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.22",
     "date-fns": "^4.1.0",
+    "gsap": "^3.14.2",
     "next": "15.5.9",
     "next-sanity": "^10.1.4",
     "postcss": "^8.5.6",

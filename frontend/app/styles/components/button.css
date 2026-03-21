@@ -1,0 +1,23 @@
+button {
+    border: none;
+    padding: 15px 32px !important;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    min-width: 150px;
+}
+
+.button-primary {
+    background-color: #121212;
+    color: #fafafa;
+}
+
+.button-secondary {
+    background-color: #fafafa;
+    color: #121212;
+    border: 1px solid #121212;
+}

@@ -52,6 +52,18 @@ export default defineConfig({
   projectId,
   dataset,
 
+  document: {
+    newDocumentOptions: (prev) =>
+      prev.filter(
+        (template) =>
+          !['siteSettings', 'navigation'].includes(template.schemaType)
+      ),
+    actions: (prev, context) =>
+      ['siteSettings', 'navigation'].includes(context.schemaType)
+        ? prev.filter(({ action }) => action !== 'delete')
+        : prev,
+  },
+
   plugins: [
     // Presentation tool configuration for Visual Editing
     presentationTool({

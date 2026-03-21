@@ -37,6 +37,44 @@ export const getPageQuery = defineQuery(`
     subheading,
     "pageBuilder": pageBuilder[]{
       ...,
+      _type == "hero" => {
+        ...,
+        mainImage,
+        mainImageActionTitle,
+        mainImageActionDescription,
+        mainImageActionLink {
+          ...,
+          ${linkReference}
+        },
+        mainTitle,
+        mainDescription,
+        mainActionLink {
+          ...,
+          ${linkReference}
+        },
+        caseStudiesImage,
+        caseStudiesTitle,
+        caseStudiesLink {
+          ...,
+          ${linkReference}
+        },
+        blogsImage,
+        blogsTitle,
+        blogsLink {
+          ...,
+          ${linkReference}
+        }
+      },
+      _type == "skillsGrid" => {
+        ...,
+        skills[]{
+          ...,
+          icon{
+            ...,
+            asset->
+          }
+        }
+      },
       _type == "callToAction" => {
         ${linkFields},
       },
@@ -48,6 +86,9 @@ export const getPageQuery = defineQuery(`
             ${linkReference}
           }
         }
+      },
+      _type == "personalBio" => {
+        ...,
       },
     },
   }

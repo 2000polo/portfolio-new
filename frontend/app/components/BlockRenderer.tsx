@@ -2,7 +2,15 @@ import React from 'react'
 
 import Cta from '@/app/components/Cta'
 import Info from '@/app/components/InfoSection'
+import Hero from '@/app/components/Hero'
+import SkillsGrid from '@/app/components/SkillsGrid'
+import PersonalBio from '@/app/components/PersonalBio'
 import {dataAttr} from '@/sanity/lib/utils'
+import SocialMediaBanner from '@/app/components/socialMediaBanner'
+import ServiceSection from '@/app/components/ServiceSection'  
+import LatestPortfolioSection from '@/app/components/LatestPortfolioSection'
+import ExperienceSection from './experienceSection'
+import LatestBlogsSection from './LatestBlogsSection'
 
 type BlocksType = {
   [key: string]: React.FC<any>
@@ -21,8 +29,16 @@ type BlockProps = {
 }
 
 const Blocks: BlocksType = {
+  hero: Hero,
+  skillsGrid: SkillsGrid,
   callToAction: Cta,
   infoSection: Info,
+  personalBio: PersonalBio,
+  socialMediaBanner: SocialMediaBanner,
+  servicesSection: ServiceSection,
+  latestPortfolio: LatestPortfolioSection, 
+  experienceSection: ExperienceSection,
+  latestBlogsSection: LatestBlogsSection,
 }
 
 /**
