@@ -1,7 +1,29 @@
-import {experienceSection as experienceSectionType } from '@/sanity.types'
+import Image from 'next/image'
+
+/** Local type until Sanity TypeGen includes `experienceSection` on `Page.pageBuilder`. */
+type ExperienceSectionBlock = {
+  _type: 'experienceSection'
+  _key?: string
+  heading?: string
+  subheading?: string
+  description?: string
+  expCards?: Array<{
+    cardTitle?: string
+    quantityRepresentation?: string
+    description?: string
+  }>
+  organisations?: Array<{
+    organisationLogo?: unknown
+    websiteLink?: string
+  }>
+  technologies?: Array<{
+    technologyName?: string
+    techIcon?: unknown
+  }>
+}
 
 type ExperienceSectionProps = {
-  block: ExperienceSectionType
+  block: ExperienceSectionBlock
   index: number
 }
 
@@ -42,8 +64,20 @@ export default function ExperienceSection({block}: ExperienceSectionProps){
                         </p>
 
                         <div className="mt-8 flex gap-6">
-                            <img className="h-6! w-fit! grayscale hover:grayscale-0 transition-all delay-150 ease-linear" src="https://www.2hatslogic.com/wp-content/themes/2hatslogic2024/dist/assets/img/brand/logo-wide.svg" alt=""/>
-                            <img className="h-6! w-fit! opacity-50 transition-all delay-150 ease-linear" src="https://navaltboats.com/wp-content/uploads/2023/07/Asset-8Nav-logo11-1.png.webp" alt=""/>
+                            <Image
+                                className="h-6! w-fit! grayscale hover:grayscale-0 transition-all delay-150 ease-linear"
+                                src="https://www.2hatslogic.com/wp-content/themes/2hatslogic2024/dist/assets/img/brand/logo-wide.svg"
+                                alt="2hatslogic logo"
+                                width={160}
+                                height={24}
+                            />
+                            <Image
+                                className="h-6! w-fit! opacity-50 transition-all delay-150 ease-linear"
+                                src="https://navaltboats.com/wp-content/uploads/2023/07/Asset-8Nav-logo11-1.png.webp"
+                                alt="Navalt logo"
+                                width={96}
+                                height={24}
+                            />
                             {/* <!-- <img className="h-6 w-fit contrast-[0.5] transition-all delay-150 ease-linear" src="https://oceanix.cloud/wp-content/uploads/2023/06/Asset-1dw-1-1.png" alt=""/> --> */}
                         </div>
 

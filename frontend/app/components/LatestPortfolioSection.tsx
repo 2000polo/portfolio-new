@@ -1,7 +1,19 @@
-import { latestPortfolio as latestPortfolioType } from '@/sanity.types'
+/** Local type until Sanity TypeGen includes `latestPortfolio` on `Page.pageBuilder`. */
+type LatestPortfolioBlock = {
+  _type: 'latestPortfolio'
+  _key?: string
+  heading?: string
+  subheading?: string
+  description?: string
+  portfolioItems?: Array<{
+    name?: string
+    description?: string
+    image?: unknown
+  }>
+}
 
 type LatestPortfolioProps = {
-  block: LatestPortfolioType
+  block: LatestPortfolioBlock
   index: number
 }
 

@@ -1,7 +1,20 @@
-import { servicesSection as servicesSectionType } from '@/sanity.types'
+/** Local type until Sanity TypeGen includes `servicesSection` on `Page.pageBuilder`. */
+type ServicesSectionBlock = {
+  _type: 'servicesSection'
+  _key?: string
+  heading?: string
+  subheading?: string
+  description?: string
+  cta?: number
+  services?: Array<{
+    name?: string
+    description?: string
+    icon?: unknown
+  }>
+}
 
 type ServicesSectionProps = {
-  block: ServicesSectionType
+  block: ServicesSectionBlock
   index: number
 }
 
@@ -16,7 +29,7 @@ export default function ServicesSection({block}: ServicesSectionProps) {
             <div className="service-wrapper grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6 mt-6">
                 <div className="service-description col-span-2 relative">
                     <p className="alan-sans-400 text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iure sapiente doloremque fugit vero nihil, dolores necessitatibus. Molestias culpa rerum repudiandae. Eos vero iusto dolorem nisi odit laborum eligendi esse ipsum? Earum, natus? Corrupti, architecto! Porro quam officia laudantium perspiciatis laboriosam dolorum quasi a quisquam.</p>
-                    <a href="#" className="alan-sans-500 md:alan-sans-700 text-gray-800 block md:absolute bottom-0 left-0 underline mt-6 md:mt-0"><i className="fa fa-phone pr-2 " aria-hidden="true"></i>Come let's have a conversation!</a>
+                    <a href="#" className="alan-sans-500 md:alan-sans-700 text-gray-800 block md:absolute bottom-0 left-0 underline mt-6 md:mt-0"><i className="fa fa-phone pr-2 " aria-hidden="true"></i>Come let&apos;s have a conversation!</a>
                 </div>
                 <div className="service-cards col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 mt-6 md:mt-0">
                     <div className="service-card col-span-1 flex gap-3">

@@ -1,7 +1,19 @@
-import { latestBlogsSection as latestBlogsSectionType } from '@/sanity.types'
+/** Local type until Sanity TypeGen includes `latestBlogsSection` on `Page.pageBuilder`. */
+type LatestBlogsSectionBlock = {
+  _type: 'latestBlogsSection'
+  _key?: string
+  heading?: string
+  subheading?: string
+  description?: string
+  blogs?: Array<{
+    name?: string
+    blogTeaser?: string
+    blogCardImage?: unknown
+  }>
+}
 
 type LatestBlogsSectionProps = {
-  block: LatestBlogsSectionType
+  block: LatestBlogsSectionBlock
   index: number
 }
 

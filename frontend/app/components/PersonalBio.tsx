@@ -1,7 +1,12 @@
-import {PersonalBio as PersonalBioType} from '@/sanity.types'
+/** Local type until Sanity TypeGen includes `personalBio` on `Page.pageBuilder`. */
+type PersonalBioBlock = {
+  _type: 'personalBio'
+  _key?: string
+  paragraph?: string
+}
 
 type PersonalBioProps = {
-  block: PersonalBioType
+  block: PersonalBioBlock
   index: number
 }
 

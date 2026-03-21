@@ -1,7 +1,18 @@
-import {socialMediaBanner as socialMediaBannerType} from '@/sanity.types'
+/** Local type until Sanity TypeGen includes `socialMediaBanner` on `Page.pageBuilder`. */
+type SocialMediaBannerBlock = {
+  _type: 'socialMediaBanner'
+  _key?: string
+  heading?: string
+  description?: string
+  socialMedia?: Array<{
+    name?: string
+    link?: string
+    icon?: unknown
+  }>
+}
 
 type SocialMediaBannerProps = {
-  block: SocialMediaBannerType
+  block: SocialMediaBannerBlock
   index: number
 }
 

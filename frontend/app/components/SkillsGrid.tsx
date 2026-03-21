@@ -2,11 +2,35 @@ import {Image} from 'next-sanity/image'
 import {getImageDimensions} from '@sanity/asset-utils'
 import {stegaClean} from '@sanity/client/stega'
 
-import {SkillsGrid as SkillsGridType} from '@/sanity.types'
 import {urlForImage} from '@/sanity/lib/utils'
 
+/** Minimal Sanity image shape for `urlForImage` / `getImageDimensions`. */
+type SanityImageField = {
+  asset?: {_ref?: string}
+  alt?: string
+  _type?: string
+}
+
+/** Local type until Sanity TypeGen includes `skillsGrid` on `Page.pageBuilder`. */
+type SkillsGridSkill = {
+  name?: string
+  description?: string
+  icon?: SanityImageField
+  level?: string
+  category?: string
+}
+
+type SkillsGridBlock = {
+  _type: 'skillsGrid'
+  _key?: string
+  heading?: string
+  subheading?: string
+  description?: string
+  skills?: SkillsGridSkill[]
+}
+
 type SkillsGridProps = {
-  block: SkillsGridType
+  block: SkillsGridBlock
   index: number
 }
 
@@ -56,13 +80,14 @@ export default function SkillsGrid({block}: SkillsGridProps) {
         {/* Skills Grid */}
         {skills.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {skills.map((skill, index) => {
+            {skills.map((skill: SkillsGridSkill, index: number) => {
               if (!skill) return null
 
               const icon = skill.icon?.asset?._ref
                 ? {
                     src: urlForImage(skill.icon)?.url() as string,
-                    dimensions: getImageDimensions(skill.icon),
+                    // Runtime shape matches Sanity image; TypeGen types are stricter than our local block type.
+                    dimensions: getImageDimensions(skill.icon as Parameters<typeof getImageDimensions>[0]),
                     alt: stegaClean(skill.icon?.alt) || skill.name || 'Skill icon',
                   }
                 : null
