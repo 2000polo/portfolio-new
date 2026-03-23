@@ -36,8 +36,8 @@ export default function LatestPortfolioSection({block}: LatestPortfolioProps) {
                     <div key={item.name} className="work-card min-w-[300px] max-w-[300px] h!-auto">
                       <Image
                         className="rounded-2xl overflow-hidden w-full h-auto"
-                        src={item.image}
-                        alt={item.name}
+                        src={item?.image}
+                        alt={item?.name}
                         width={236}
                         height={236}
                         sizes="300px"
