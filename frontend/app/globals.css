@@ -1,11 +1,10 @@
 @import 'tailwindcss';
-
-
 @plugin "@tailwindcss/typography";
+
 
 @utility container {
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 0.5rem;
 }
 
 @theme {
@@ -35,12 +34,14 @@
   --default-transition-duration: 250ms;
 }
 
+
 @import './styles/base/typography.css';
 @import './styles/variables/colors.css';
 @import './styles/variables/spaces.css';
 @import './styles/components/button.css';
 
+
 img{
   width: 100%;
-  height: auto;
+  /* height: 100%; */
 }

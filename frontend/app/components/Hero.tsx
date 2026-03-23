@@ -105,7 +105,9 @@ export default function Hero({block}: HeroProps) {
                         <div className="hero-img-action-btn absolute bottom-0 left-0 right-0 alan-sans-500 p-4">
                             <ResolvedLink link={block.mainImageActionLink} className="block">
                                 <div className=" flex gap-4 p-2 items-center h-full w-full bg-white/10 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-gray-100/20 text-white">
-                                    <i className="fa fa-comments bg-white/20 p-2 px-3.5 md:p-6 rounded-md text-2xl" aria-hidden="true"></i>
+                                    <div className=" h-full [&:before]:h-full w-fit! d-flex md:h-12 flex items-center justify-center aspect-square p-4 bg-gray-200/10 rounded-md" aria-hidden="true">
+                                        <i className="fa fa-comments" aria-hidden="true"></i>
+                                    </div>
                                     <div className="">
                                         {block.mainImageActionTitle && (
                                             <strong>{stegaClean(block.mainImageActionTitle)}</strong>

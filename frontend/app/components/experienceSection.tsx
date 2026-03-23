@@ -28,39 +28,34 @@ type ExperienceSectionProps = {
 }
 
 export default function ExperienceSection({block}: ExperienceSectionProps){
+    console.log("block", block)
+
+    const { expCards, organisations, technologies, heading, subheading, description } = block
+
+
+
     return (
         <section className="bg-black text-white">
             <div className="experience-seciton-wrapper container mb-12 md:mb-24 py-12 md:py-24">
                 <div className="grid grid-cols-2 gap-2 md:gap-4 min-h-[400px] h-full">
                     <div className="left-side col-span-2 lg:col-span-1 flex justify-between flex-col">
-                        <h2 className="alan-sans-800 text-3xl md:text-5xl">A wrap about my experience</h2>
-                        <div className="grid grid-cols-2 gap-6 md:gap-6 h-fit mt-12 xl:mt-auto">
-                            <div className="stats-card col-span-1">
-                                <span className="alan-sans-500 text-white">Experience</span>
-                                <h3 className="alan-sans-400 md:alan-sans-500 text-3xl md:text-4xl">4+</h3>
-                                <p className="alan-sans-300 text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                            </div>
-                            <div className="stats-card col-span-1">
-                                <span className="alan-sans-500 text-white">Projects</span>
-                                <h3 className="alan-sans-400 md:alan-sans-500 text-3xl md:text-4xl">50+</h3>
-                                <p className="alan-sans-300 text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                            </div>
-                            <div className="stats-card col-span-1">
-                                <span className="alan-sans-500 text-white">Clients</span>
-                                <h3 className="alan-sans-400 md:alan-sans-500 text-3xl md:text-4xl">100+</h3>
-                                <p className="alan-sans-300 text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                            </div>
-                            <div className="stats-card col-span-1">
-                                <span className="alan-sans-500 text-white">Tech Stack</span>
-                                <h3 className="alan-sans-400 md:alan-sans-500 text-3xl md:text-4xl">150+</h3>
-                                <p className="alan-sans-300 text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                            </div>
+                        <h2 className="alan-sans-800 text-3xl md:text-5xl">{heading}</h2>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 h-fit mt-12 xl:mt-auto">
+                            {
+                                expCards?.map((card) => (
+                                    <div key={card.cardTitle} className="stats-card col-span-1">
+                                        <span className="alan-sans-500 text-white">{card.cardTitle}</span>
+                                        <h3 className="alan-sans-400 md:alan-sans-500 text-3xl md:text-4xl">{card.quantityRepresentation}</h3>
+                                        <p className="alan-sans-300 text-gray-200">{card.description}</p>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                     
                     <div className="right-side col-span-2 lg:col-span-1 h-full relative mt-12 lg:mt-0">
                         <p className="alan-sans-500 text-gray-100">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nisi nobis dolorem tenetur veritatis sint delectus alias laborum, earum blanditiis officiis tempore harum quae. Voluptatem ad natus numquam. Aspernatur error, fuga repudiandae animi earum labore?
+                            {description}
                         </p>
 
                         <div className="mt-8 flex gap-6">
@@ -83,49 +78,46 @@ export default function ExperienceSection({block}: ExperienceSectionProps){
 
                         <div className="technology-section flex gap-2 mt-12 flex-wrap">
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-html5" aria-hidden="true"></i>
+                                <i className="fa-brands fa-html5" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-css3" aria-hidden="true"></i>
+                                <i className="fa-brands fa-css3" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-git" aria-hidden="true"></i>
+                                <i className="fa-brands fa-git" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-github" aria-hidden="true"></i>
+                                <i className="fa-brands fa-github" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-gitlab" aria-hidden="true"></i>
+                                <i className="fa-brands fa-gitlab" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-html5" aria-hidden="true"></i>
+                                <i className="fa-brands fa-html5" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-css3" aria-hidden="true"></i>
+                                <i className="fa-brands fa-css3" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-git" aria-hidden="true"></i>
+                                <i className="fa-brands fa-git" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-github" aria-hidden="true"></i>
+                                <i className="fa-brands fa-github" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-gitlab" aria-hidden="true"></i>
+                                <i className="fa-brands fa-gitlab" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-git" aria-hidden="true"></i>
+                                <i className="fa-brands fa-git" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-github" aria-hidden="true"></i>
+                                <i className="fa-brands fa-github" aria-hidden="true"></i>
                             </a>
                             <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
-                                <i className="fa fa-gitlab" aria-hidden="true"></i>
+                                <i className="fa-brands fa-gitlab" aria-hidden="true"></i>
                             </a>
                         </div>
        
-                        {/* <!-- <p className="alan-sans-400 text-gray-500 mt-12">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nisi nobis dolorem tenetur veritatis sint delectus alias laborum, earum blanditiis officiis tempore harum quae. Voluptatem ad natus numquam. Aspernatur error, fuga repudiandae animi earum labore?
-                        </p> --> */}
                         <a href="#" className="alan-sans-500 md:alan-sans-700 text-gray-100 block md:absolute bottom-0 right-0 underline mt-6 md:mt-0">explore timeline?</a>
                     </div>
                 </div>

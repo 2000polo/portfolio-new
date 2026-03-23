@@ -1,4 +1,5 @@
 import './globals.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 import '@fontsource/alan-sans/300.css'
 import '@fontsource/alan-sans/400.css'
