@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {urlForImage} from '@/sanity/lib/utils'
 
 /** Local type until Sanity TypeGen includes `latestPortfolio` on `Page.pageBuilder`. */
 type LatestPortfolioBlock = {
@@ -32,12 +33,18 @@ export default function LatestPortfolioSection({block}: LatestPortfolioProps) {
 
             <div className="flex gap-2 md:gap-4 mt-6 overflow-x-visible overflow-scroll -mx-[0.5rem] sm:mx-0 px-[0.5rem] sm:px-0">
                 {
-                  portfolioItems?.map((item) => (
+                  portfolioItems?.map((item) => {
+                    const imageSrc =
+                      typeof item?.image === 'string'
+                        ? item.image
+                        : urlForImage(item?.image)?.width(300).height(300).fit('crop').url()
+
+                    return (
                     <div key={item.name} className="work-card min-w-[300px] max-w-[300px] h!-auto">
                       <Image
                         className="rounded-2xl overflow-hidden w-full h-auto"
-                        src={item?.image ? item?.image : '#'}
-                        alt={item?.name}
+                        src={imageSrc ?? 'https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg'}
+                        alt={item?.name ?? 'Portfolio item'}
                         width={236}
                         height={236}
                         sizes="300px"
@@ -47,7 +54,8 @@ export default function LatestPortfolioSection({block}: LatestPortfolioProps) {
                         <p className="alan-sans-400 text-gray-500">{item?.description}</p>
                       </div>
                     </div>
-                  ))
+                    )
+                  })
                 }
                 
                 <div className="work-card min-w-[300px] max-w-[300px] h!-auto">
