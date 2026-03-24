@@ -79,7 +79,7 @@ export default function ExperienceSection({block}: ExperienceSectionProps){
                         <div className="technology-section flex gap-2 mt-12 flex-wrap">
                             {
                                 technologies?.map((technology) => (
-                                    <a href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
+                                    <a key={technology.technologyName} href="#" className="p-2 text-2xl bg-gray-500/30 aspect-square w-12 h-12 flex items-center justify-center rounded-md">
                                         <i className={`fa-brands fa-${(technology.techIcon || '').replace(/[\u200B-\u200D\uFEFF]/g, '')}`} aria-hidden="true"></i>
                                     </a>
                                 ))
