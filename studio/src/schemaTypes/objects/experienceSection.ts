@@ -81,8 +81,8 @@ export const experienceSection = defineType({
                 defineField({
                     name: 'techIcon',
                     title: 'Technology Icon',
-                    type: 'image',
-                    description: 'Technology icon',
+                    type: 'string',
+                    description: 'Technology icon (e.g., fa-html5)',
                 })
             ]}],
         })

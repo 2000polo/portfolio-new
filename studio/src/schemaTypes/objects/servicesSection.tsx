@@ -55,8 +55,8 @@ export const servicesSection = defineType({
             defineField({
                 name: 'icon',
                 title: 'Service Icon',
-                type: 'image',
-                description: 'Service icon',
+                type: 'string',
+                description: 'Service icon (e.g., fa-paint-brush)',
             }),
         ]}],
         description: 'Services section services',

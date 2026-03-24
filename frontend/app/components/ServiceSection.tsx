@@ -41,7 +41,7 @@ export default function ServicesSection({block}: ServicesSectionProps) {
                             services?.map((service) => (
                                 <div key={service.name} className="service-card col-span-1 flex gap-3">
                                     <div className=" h-full [&:before]:h-full w-fit! d-flex md:h-12 flex items-center justify-center aspect-square p-4 bg-gray-200 rounded-md mb-3" aria-hidden="true">
-                                        <i className="fa fa-paint-brush" aria-hidden="true"></i>
+                                        <i className={`fa fa-${(service.icon as string || '').replace(/[\u200B-\u200D\uFEFF]/g, '')}`} aria-hidden="true"></i>
                                     </div>
                                     <div className="">
                                         <h3 className="alan-sans-800 leading-[1] md:-mt-1 text-lg md:text-xl">{service.name}</h3>
