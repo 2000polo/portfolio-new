@@ -28,6 +28,7 @@ type ProjectListProps = {
   block: ProjectList
 }
 
+
 export default function ProjectList({block}: ProjectListProps) {
 
     console.log(block);
@@ -36,7 +37,7 @@ export default function ProjectList({block}: ProjectListProps) {
 
     const previewRef = useRef<HTMLDivElement>(null);
 
-    const [images, setImages] = useState<string[]>([]);
+    const [images, setImages] = useState<any[]>([]);
     const [index, setIndex] = useState(0);
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
