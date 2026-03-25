@@ -28,43 +28,6 @@ type ProjectListProps = {
   block: ProjectList
 }
 
-
-type Item = {
-    title: string;
-    gallery: any[];
-    image: string;
-    description: string;
-    link: string;
-    projectName: string;
-  };
-  
-const items: Item[] = [
-    {
-      title: "Mountain",
-      images: [
-        "https://picsum.photos/id/1015/500/350",
-        "https://picsum.photos/id/1016/500/350",
-        "https://picsum.photos/id/1018/500/350",
-      ],
-    },
-    {
-      title: "Dog",
-      images: [
-        "https://picsum.photos/id/1025/500/350",
-        "https://picsum.photos/id/1024/500/350",
-        "https://picsum.photos/id/1021/500/350",
-      ],
-    },
-    {
-      title: "Forest",
-      images: [
-        "https://picsum.photos/id/1035/500/350",
-        "https://picsum.photos/id/1033/500/350",
-        "https://picsum.photos/id/1032/500/350",
-      ],
-    },
-];
-
 export default function ProjectList({block}: ProjectListProps) {
 
     console.log(block);
