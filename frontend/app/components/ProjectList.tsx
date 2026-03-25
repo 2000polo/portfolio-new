@@ -1,11 +1,33 @@
-import { ProjectList as ProjectListType } from '@/sanity.types'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import {urlForImage} from '@/sanity/lib/utils'
 import {Image} from 'next-sanity/image'
 
+
+export type ProjectList = {
+    _type: 'projectList'
+    projects: Array<{
+      projectName: string
+      description: string
+      image: {
+        asset: {
+          _ref: string
+          _type: 'reference'
+          _weak?: boolean
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+        }
+        media?: unknown
+        hotspot?: SanityImageHotspot
+        crop?: SanityImageCrop
+        alt?: string
+        _type: 'image'
+      }
+      link: Link
+    }>
+}
+
 type ProjectListProps = {
-  block: ProjectListType
+  block: ProjectList
 }
 
 

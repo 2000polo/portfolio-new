@@ -775,28 +775,6 @@ export type PagesSlugsResult = Array<{
   slug: string
 }>
 
-export type ProjectList = {
-  _type: 'projectList'
-  projects: Array<{
-    projectName: string
-    description: string
-    image: {
-      asset: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      media?: unknown
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      alt?: string
-      _type: 'image'
-    }
-    link: Link
-  }>
-}
-
 // Query TypeMap
 import '@sanity/client'
 declare module '@sanity/client' {
