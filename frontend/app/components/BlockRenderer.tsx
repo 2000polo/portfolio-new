@@ -11,6 +11,8 @@ import ServiceSection from '@/app/components/ServiceSection'
 import LatestPortfolioSection from '@/app/components/LatestPortfolioSection'
 import ExperienceSection from './experienceSection'
 import LatestBlogsSection from './LatestBlogsSection'
+import ProjectList from './ProjectList'
+import BannerSectionVarient1 from './BannerSectionVarient1'
 
 type BlocksType = {
   [key: string]: React.FC<any>
@@ -39,6 +41,8 @@ const Blocks: BlocksType = {
   latestPortfolio: LatestPortfolioSection, 
   experienceSection: ExperienceSection,
   latestBlogsSection: LatestBlogsSection,
+  projectList: ProjectList,
+  bannerSectionVarient1: BannerSectionVarient1,
 }
 
 /**

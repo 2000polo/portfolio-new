@@ -54,7 +54,9 @@ export const page = defineType({
         {type: 'servicesSection'},
         {type: 'latestPortfolio'},
         {type: 'experienceSection'},
-        {type: 'latestBlogsSection'}
+        {type: 'latestBlogsSection'},
+        {type: 'projectList'},
+        {type: 'bannerSectionVarient1'}
       ],
       options: {
         insertMenu: {

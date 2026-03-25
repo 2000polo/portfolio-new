@@ -21,3 +21,66 @@ button {
     color: #121212;
     border: 1px solid #121212;
 }
+.list-wrapper{
+    width:400px;
+    margin:120px auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  
+  .list-item{
+    padding:16px;
+    background:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:500;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  .preview{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:9999;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  
+  .preview img{
+    width:260px;
+    border-radius:14px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 25px 60px rgba(0,0,0,0.25);
+  }
+  
+  .preview-hidden{
+    opacity:0;
+    transform:scale(.85);
+  }
+  
+  .preview-visible{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .bg-1 {
+    width: 100%;
+    height: 100%;
+    --s: 60px;
+    --c1: #000000;
+    --c2: #2b2b2b;
+    --_g: radial-gradient(
+      25% 25% at 25% 25%,
+      var(--c1) 99%,
+      rgba(0, 0, 0, 0) 101%
+    );
+    background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
+        calc(2 * var(--s)),
+      var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
+        var(--s),
+      repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
+        calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+  }
