@@ -14,15 +14,13 @@ export type ProjectList = {
           _ref: string
           _type: 'reference'
           _weak?: boolean
-          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
         }
         media?: unknown
-        hotspot?: SanityImageHotspot
-        crop?: SanityImageCrop
         alt?: string
         _type: 'image'
       }
-      link: Link
+      link: any
+      gallery: any[]
     }>
 }
 
