@@ -1,23 +1,25 @@
-/** Local type until Sanity TypeGen includes `personalBio` on `Page.pageBuilder`. */
-type PersonalBioBlock = {
-  _type: 'personalBio'
-  _key?: string
-  paragraph?: string
-}
+'use client'
 
-type PersonalBioProps = {
-  block: PersonalBioBlock
-  index: number
-}
+import { useRef } from 'react'
+import useSplitTextAnimation from '@/app/lib/hooks/useSplitTextAnimation'
 
-export default function PersonalBio({block}: PersonalBioProps) {
+export default function PersonalBio({ block }: { block: { paragraph: string } }) {
+  const bioRef = useRef<HTMLHeadingElement>(null)
+
+  useSplitTextAnimation(bioRef)
+
   return (
     <section>
-        {block.paragraph && (
-            <div className="brief-desc-wrapper container mb-12 md:mb-24">
-                <h2 className="alan-sans-800 text-3xl md:text-5xl">{block.paragraph}</h2>
-            </div>
-        )}
+      {block.paragraph && (
+        <div className="container mb-12 md:mb-24">
+          <h2
+            ref={bioRef}
+            className="bio alan-sans-800 text-3xl md:text-5xl"
+          >
+            {block.paragraph}
+          </h2>
+        </div>
+      )}
     </section>
   )
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image'
-
+import { useRef } from 'react'
+import useSplitTextAnimation from '@/app/lib/hooks/useSplitTextAnimation'
 /** Local type until Sanity TypeGen includes `experienceSection` on `Page.pageBuilder`. */
 type ExperienceSectionBlock = {
   _type: 'experienceSection'
@@ -32,14 +33,18 @@ export default function ExperienceSection({block}: ExperienceSectionProps){
 
     const { expCards, organisations, technologies, heading, subheading, description } = block
 
+    const headingRef = useRef<HTMLHeadingElement>(null)
+    const descriptionRef = useRef<HTMLParagraphElement>(null)   
 
+    useSplitTextAnimation(headingRef, 0.2)
+    useSplitTextAnimation(descriptionRef, 0.4)
 
     return (
         <section className="bg-black text-white">
             <div className="experience-seciton-wrapper container mb-12 md:mb-24 py-12 md:py-24">
                 <div className="grid grid-cols-2 gap-2 md:gap-4 min-h-[400px] h-full">
                     <div className="left-side col-span-2 lg:col-span-1 flex justify-between flex-col">
-                        <h2 className="alan-sans-800 text-3xl md:text-5xl">{heading}</h2>
+                        <h2 ref={headingRef} className="alan-sans-800 text-3xl md:text-5xl">{heading}</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 h-fit mt-12 xl:mt-auto">
                             {
                                 expCards?.map((card) => (
@@ -54,7 +59,7 @@ export default function ExperienceSection({block}: ExperienceSectionProps){
                     </div>
                     
                     <div className="right-side col-span-2 lg:col-span-1 h-full relative mt-12 lg:mt-0">
-                        <p className="alan-sans-500 text-gray-100">
+                        <p ref={descriptionRef} className="alan-sans-500 text-gray-100">
                             {description}
                         </p>
 

@@ -33,14 +33,14 @@ export default function LatestPortfolioSection({block}: LatestPortfolioProps) {
 
             <div className="flex gap-2 md:gap-4 mt-6 overflow-x-visible overflow-scroll -mx-[0.5rem] sm:mx-0 px-[0.5rem] sm:px-0">
                 {
-                  portfolioItems?.map((item) => {
+                  portfolioItems?.map((item, index) => {
                     const imageSrc =
                       typeof item?.image === 'string'
                         ? item.image
                         : urlForImage(item?.image)?.width(300).height(300).fit('crop').url()
 
                     return (
-                    <div key={item.name} className="work-card min-w-[300px] max-w-[300px] h!-auto">
+                    <div key={item?.name ?? index} className="work-card min-w-[300px] max-w-[300px] h!-auto">
                       <Image
                         className="rounded-2xl overflow-hidden w-full h-auto"
                         src={imageSrc ?? 'https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg'}

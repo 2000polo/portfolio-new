@@ -78,7 +78,7 @@ export default function ProjectList({block}: ProjectListProps) {
     useEffect(() => {
         animate();
         return () => cancelAnimationFrame(animationFrame.current!);
-    }, []);
+    });
 
     const handleMouseMove = (e: React.MouseEvent) => {
         mouse.current.x = e.clientX + 20;

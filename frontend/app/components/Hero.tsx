@@ -10,6 +10,7 @@ import {Link} from '@/sanity.types'
 import {urlForImage} from '@/sanity/lib/utils'
 
 import gsap from 'gsap'
+import useSplitTextAnimation from '@/app/lib/hooks/useSplitTextAnimation'
 
 type HeroType = {
   _type: 'hero'
@@ -35,6 +36,9 @@ type HeroProps = {
 }
 
 export default function Hero({block}: HeroProps) {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  useSplitTextAnimation(titleRef)
+
   const heroImgRef = useRef<HTMLDivElement>(null)
   // Main Image
   const mainImageUrl = block.mainImage?.asset?._ref
@@ -69,17 +73,17 @@ export default function Hero({block}: HeroProps) {
     if (!heroImgRef.current) return
 
     // Set initial states before first paint to prevent flash/jerk
-    gsap.set('.hero-main-image', {x: '-100%', opacity: 0, width: 0})
-    gsap.set('.hero-main-content', {y: '-100%', opacity: 0})
-    gsap.set('.hero-case-studies', {x: '100%', opacity: 0})
-    gsap.set('.hero-blogs', {y: '100%', opacity: 0})
+    gsap.set('.hero-main-image', { opacity: 0,})
+    gsap.set('.hero-main-content', { opacity: 0})
+    gsap.set('.hero-case-studies', { opacity: 0})
+    gsap.set('.hero-blogs', { opacity: 0})
 
     const tl = gsap.timeline({defaults: {ease: 'power2.inOut', duration: 1}})
 
-    tl.to('.hero-main-image', {x: 0, opacity: 1, width: '100%', display: 'block'}, 0.3)
-    tl.to('.hero-main-content', {y: 0, opacity: 1}, 0.5)
-    tl.to('.hero-case-studies', {x: 0, opacity: 1}, 0.7)
-    tl.to('.hero-blogs', {y: 0, opacity: 1}, 0.9)
+    tl.to('.hero-main-image', { opacity: 1}, 0.3)
+    tl.to('.hero-main-content', { opacity: 1}, 0.5)
+    tl.to('.hero-case-studies', { opacity: 1}, 0.7)
+    tl.to('.hero-blogs', { opacity: 1}, 0.9)
   }, [])
 
   return (
@@ -128,7 +132,7 @@ export default function Hero({block}: HeroProps) {
               <div className="hero-main-content grid-item col-span-12 sm:col-span-6 row-span-2 lg:row-span-1 row-start-3 sm:row-start-1 sm:col-start-7 rounded-2xl overflow-hidden">
                   <div className="bg-black flex flex-col h-full w-full p-4 text-white  ">
                       {mainTitleLines.length > 0 && (
-                          <div className="content text-2xl sm:text-3xl lg:text-4xl xl:text-5xl alan-sans-800">
+                          <div  className="content text-2xl sm:text-3xl lg:text-4xl xl:text-5xl alan-sans-800">
                               {mainTitleLines.map((line: string, index: number) => (
                                   <p key={index}>{line}</p>
                               ))}
@@ -136,7 +140,7 @@ export default function Hero({block}: HeroProps) {
                       )}
                       <div className="desc-with-action-btn mt-auto flex items-center justify-between gap-4">
                           {block.mainDescription && (
-                              <p className="alan-sans-400 text-sm text-gray-200 mt-4">
+                              <p  className="alan-sans-400 text-sm text-gray-200 mt-4">
                                   {stegaClean(block.mainDescription)}
                               </p>
                           )}
