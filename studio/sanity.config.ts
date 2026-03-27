@@ -52,6 +52,11 @@ export default defineConfig({
   projectId,
   dataset,
 
+  typegen: {
+    generate: true,
+    outputPath: './sanity.types.ts',
+  },
+
   document: {
     newDocumentOptions: (prev) =>
       prev.filter(
