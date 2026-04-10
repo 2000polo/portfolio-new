@@ -16,6 +16,7 @@ import { experienceSection } from './objects/experienceSection'
 import { latestBlogsSection } from './objects/latestBlogsSection'
 import { projectList } from './objects/projectList'
 import { bannerSectionVarient1 } from './objects/bannerSectionVarient1'
+import { bannerSectionVarient2 } from './objects/bannerSectionVarient2'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
@@ -41,4 +42,5 @@ export const schemaTypes = [
   latestBlogsSection,
   projectList,
   bannerSectionVarient1,
+  bannerSectionVarient2,
 ]

@@ -13,6 +13,7 @@ import ExperienceSection from './experienceSection'
 import LatestBlogsSection from './LatestBlogsSection'
 import ProjectList from './ProjectList'
 import BannerSectionVarient1 from './BannerSectionVarient1'
+import BannerSectionVarient2 from './BannerSectionVarient2'
 
 type BlocksType = {
   [key: string]: React.FC<any>
@@ -43,6 +44,7 @@ const Blocks: BlocksType = {
   latestBlogsSection: LatestBlogsSection,
   projectList: ProjectList,
   bannerSectionVarient1: BannerSectionVarient1,
+  bannerSectionVarient2: BannerSectionVarient2,
 }
 
 /**

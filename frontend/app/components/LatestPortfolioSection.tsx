@@ -40,7 +40,7 @@ export default function LatestPortfolioSection({block}: LatestPortfolioProps) {
                         : urlForImage(item?.image)?.width(300).height(300).fit('crop').url()
 
                     return (
-                    <div key={item?.name ?? index} className="work-card min-w-[300px] max-w-[300px] h!-auto">
+                    <div key={`${item?.name}-${index}`} className="work-card min-w-[300px] max-w-[300px] h!-auto">
                       <Image
                         className="rounded-2xl overflow-hidden w-full h-auto"
                         src={imageSrc ?? 'https://i.pinimg.com/236x/bc/99/1d/bc991da9dbed06a43ed49eb735100778.jpg'}
